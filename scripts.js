@@ -1,5 +1,3 @@
-
-
 // document.addEventListener("keydown", handleKey);
 // function handleKey(e) {
 //   const elemdisp = document.getElementById("elemdisp");
@@ -11,10 +9,11 @@ const result = document.getElementById("result");
 const timerdisplay = document.getElementById("timer");
 const startBtn = document.getElementById("startBtn");
 
-let timeLeft = 30; 
+let timeLeft = 30;
 let timerId = null;
 
 startBtn.addEventListener("click", () => {
+  if (timerId !== null) return;
   timeLeft = 30;
   timerdisplay.textContent = timeLeft;
 
@@ -22,30 +21,24 @@ startBtn.addEventListener("click", () => {
     if (timeLeft === 0) {
       clearInterval(timerId);
       timerId = null;
-    //   alert("stop!");
+      alert("stop!");
       return;
     }
 
-    timeLeft--;
+    timeLeft--; 
     timerdisplay.textContent = timeLeft;
   }, 1000);
 });
 
-
-
-
 button.addEventListener("click", () => {
   const text = typingDiv.textContent;
   const size = text.length;
-  
+
   const wpm = size / 5;
 
   result.textContent = wpm;
-  alert("Your WPM is:" +wpm);
-
+  alert("Your WPM is:" + wpm);
 });
-
-
 
 // function calculateWPM() {
 //   const text = typingDiv.textContent;
@@ -56,11 +49,6 @@ button.addEventListener("click", () => {
 
 //   result.textContent = "WPM: " + Math.round(wpm);
 // }
-
-
-
-
-
 
 const keys = document.querySelectorAll(".key");
 
@@ -79,4 +67,3 @@ document.addEventListener("keyup", (e) => {
     }
   });
 });
-
