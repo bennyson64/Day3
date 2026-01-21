@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-neutral-100 min-h-screen flex items-center justify-center p-8"
+  >
+    <div class="static-content">
+      When buildings collapse in future -disasters, a robotic cockroach may be
+      the new hero helping rescue people. Disgusting as they may be, roaches
+      have the remarkable ability to squish their bodies down to one quarter
+      their normal size, yet still scamper at lightning
+    </div>
+
+    <div class="keyboard flex items-center justify-center">
+      <div class="row">
+        <button class="key">~<br />`</button>
+        <button class="key">!<br />1</button>
+        <button class="key">@<br />2</button>
+        <button class="key">#<br />3</button>
+        <button class="key">$<br />4</button>
+        <button class="key">%<br />5</button>
+        <button class="key">^<br />6</button>
+        <button class="key">&<br />7</button>
+        <button class="key">*<br />8</button>
+        <button class="key">(<br />9</button>
+        <button class="key">)<br />0</button>
+        <button class="key">_<br />-</button>
+        <button class="key">+<br />=</button>
+        <button class="key backspace">backspace</button>
+      </div>
+
+      <div class="row">
+        <button class="key tab">tab</button>
+        <button class="key">Q</button>
+        <button class="key">W</button>
+        <button class="key">E</button>
+        <button class="key">R</button>
+        <button class="key">T</button>
+        <button class="key">Y</button>
+        <button class="key">U</button>
+        <button class="key">I</button>
+        <button class="key">O</button>
+        <button class="key">P</button>
+        <button class="key">{<br />[</button>
+        <button class="key">}<br />]</button>
+        <button class="key">|<br />\</button>
+      </div>
+
+      <div class="row">
+        <button class="key caps">caps lock</button>
+        <button class="key">A</button>
+        <button class="key">S</button>
+        <button class="key">D</button>
+        <button class="key">F</button>
+        <button class="key">G</button>
+        <button class="key">H</button>
+        <button class="key">J</button>
+        <button class="key">K</button>
+        <button class="key">L</button>
+        <button class="key">:<br />;</button>
+        <button class="key">"<br />'</button>
+        <button class="key enter">enter</button>
+      </div>
+
+      <div class="row">
+        <button class="key shift-left">shift</button>
+        <button class="key">Z</button>
+        <button class="key">X</button>
+        <button class="key">C</button>
+        <button class="key">V</button>
+        <button class="key">B</button>
+        <button class="key">N</button>
+        <button class="key">M</button>
+        <button class="key"><br />,</button>
+        <button class="key">><br />.</button>
+        <button class="key">?<br />/</button>
+        <button class="key shift-right">shift</button>
+      </div>
+
+      <div class="row">
+        <button class="key ctrl">ctrl</button>
+        <button class="key">alt</button>
+        <button class="key space">space</button>
+        <button class="key">alt</button>
+        <button class="key ctrl">ctrl</button>
+      </div>
+
+      <div
+        class="block flex flex-col w-full max-w-md break-words whitespace-normal overflow-y-auto"
+        id="elemdisp"
+        contenteditable="true"
+      >
+        Type here
+      </div>
+    </div>
+    <button class="bg-blue-500 p-1 border" id="calcBtn">Calculate WPM</button>
+    <p id="result"></p>
+
+    <button class="bg-blue-500 p-1 border" id="startBtn">Start</button>
+    <p id="timer">30</p>
+
+    <style>
+      .keyboard {
+        background: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        display: inline-block;
+      }
+
+      .row {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .row:last-child {
+        margin-bottom: 0;
+      }
+
+      .key {
+        background: #fff;
+        border: 1px solid #d4d4d4;
+        border-bottom: 3px solid #a3a3a3;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        min-width: 3rem;
+        height: 3rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #262626;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: lowercase;
+        line-height: 1.2;
+      }
+
+      .key:active {
+        transform: translateY(2px);
+        border-bottom-width: 1px;
+      }
+      
+      .key.active {
+        background-color: blue;
+        color: white;
+      }
+
+      .backspace {
+        width: 6rem;
+      }
+      .tab {
+        width: 4.5rem;
+      }
+      .caps {
+        width: 5.5rem;
+      }
+      .enter {
+        width: 5.5rem;
+      }
+      .shift-left {
+        width: 7rem;
+      }
+      .shift-right {
+        width: 7rem;
+      }
+      .ctrl {
+        width: 4rem;
+      }
+      .space {
+        flex: 1;
+      }
+
+      @media (max-width: 768px) {
+        .keyboard {
+          padding: 0.5rem;
+          max-width: 100%;
+        }
+
+        .key {
+          min-width: 2rem;
+          height: 2.5rem;
+          padding: 0.5rem;
+          font-size: 0.75rem;
+        }
+
+        .backspace {
+          width: 4rem;
+        }
+        .tab {
+          width: 3rem;
+        }
+        .caps {
+          width: 3.5rem;
+        }
+        .enter {
+          width: 3.5rem;
+        }
+        .shift-left {
+          width: 4.5rem;
+        }
+        .shift-right {
+          width: 4.5rem;
+        }
+        .ctrl {
+          width: 2.5rem;
+        }
+      }
+    </style>
+  </body>
+  <script src="./scripts.js"></script>
+</html>
