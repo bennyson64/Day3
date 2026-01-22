@@ -15,13 +15,22 @@
     ></div>
 
     <div class="flex items-center justify-between mb-4">
-      <div class="flex flex-col items-center">
-        <button class="bg-blue-500 p-2 border rounded mb-2" id="calcBtn">
+      <div class="flex items-center space-x-2">
+        <button
+          class="bg-blue-500 text-white p-2 border rounded w-32"
+          id="calcBtn"
+        >
           Calculate WPM
         </button>
-        <p id="result" class="mb-2"></p>
+        <p
+          id="result"
+          class="bg-gray-200 p-2 border rounded w-32 text-center"
+        ></p>
 
-        <button class="bg-blue-500 p-2 border rounded mb-2" id="startBtn">
+        <button
+          class="bg-blue-500 text-white p-2 border rounded w-32"
+          id="startBtn"
+        >
           Start
         </button>
       </div>
@@ -114,7 +123,7 @@
       .disabled-btn {
         cursor: not-allowed;
         opacity: 0.6;
-      } 
+      }
       .keyboard {
         background: white;
         padding: 1rem;

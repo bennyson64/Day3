@@ -36,6 +36,7 @@ startBtn.addEventListener("click", () => {
   timeLeft = 30;
   timerdisplay.textContent = timeLeft;
   startTime = Date.now();
+  console.log(startTime);
   button.disabled = true;
   startBtn.disabled = true;
   typingDiv.disabled = false;
@@ -71,7 +72,9 @@ button.addEventListener("click", () => {
   const quoteWords = quoteText.trim().split(/\s+/);
   let correctWords = 0;
   for (let i = 0; i < Math.min(typedWords.length, quoteWords.length); i++) {
-    if (typedWords[i] === quoteWords[i]) correctWords++;
+    if (typedWords[i] === quoteWords[i]){
+      correctWords++;
+    }
   }
   const accuracy =
     typedWords.length > 0 ? (correctWords / typedWords.length) * 100 : 0;
