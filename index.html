@@ -7,14 +7,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
-    class="bg-neutral-100 min-h-screen flex items-center justify-center p-8"
+    class="bg-neutral-100 min-h-screen flex flex-col items-center justify-between p-8"
   >
-    <div class="static-content">
-      When buildings collapse in future -disasters, a robotic cockroach may be
-      the new hero helping rescue people. Disgusting as they may be, roaches
-      have the remarkable ability to squish their bodies down to one quarter
-      their normal size, yet still scamper at lightning
+    <div
+      id="static-content"
+      class="text-center mb-4 bg-white p-4 border border-gray-300 rounded-lg shadow-md max-w-6xl mx-auto"
+    ></div>
+
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex flex-col items-center">
+        <button class="bg-blue-500 p-2 border rounded mb-2" id="calcBtn">
+          Calculate WPM
+        </button>
+        <p id="result" class="mb-2"></p>
+
+        <button class="bg-blue-500 p-2 border rounded mb-2" id="startBtn">
+          Start
+        </button>
+      </div>
+      <p id="timer" class="bg-red-500 text-white p-2 rounded ml-16">30</p>
     </div>
+
+    <input
+      type="text"
+      class="block w-full max-w-md p-2 border rounded mb-4"
+      id="elemdisp"
+      placeholder="Type here"
+    />
 
     <div class="keyboard flex items-center justify-center">
       <div class="row">
@@ -89,22 +108,13 @@
         <button class="key">alt</button>
         <button class="key ctrl">ctrl</button>
       </div>
-
-      <div
-        class="block flex flex-col w-full max-w-md break-words whitespace-normal overflow-y-auto"
-        id="elemdisp"
-        contenteditable="true"
-      >
-        Type here
-      </div>
     </div>
-    <button class="bg-blue-500 p-1 border" id="calcBtn">Calculate WPM</button>
-    <p id="result"></p>
-
-    <button class="bg-blue-500 p-1 border" id="startBtn">Start</button>
-    <p id="timer">30</p>
 
     <style>
+      .disabled-btn {
+        cursor: not-allowed;
+        opacity: 0.6;
+      } 
       .keyboard {
         background: white;
         padding: 1rem;
@@ -146,7 +156,7 @@
         transform: translateY(2px);
         border-bottom-width: 1px;
       }
-      
+
       .key.active {
         background-color: blue;
         color: white;
@@ -214,5 +224,5 @@
       }
     </style>
   </body>
-  <script src="./scripts.js"></script>
+  <script src="./scripts.js" defer></script>
 </html>
