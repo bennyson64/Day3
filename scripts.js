@@ -4,10 +4,9 @@ const RANDOM_QUOTE_URL = "https://random-word-api.herokuapp.com/word?number=50";
 const quoteDisp = document.getElementById("static-content");
 
 function getUrl() {
-    return fetch(RANDOM_QUOTE_URL)
-      .then((response) => response.json())
-      .then((data) => data.join(" "));
-
+  return fetch(RANDOM_QUOTE_URL)
+    .then((response) => response.json())
+    .then((data) => data.join(" "));
 }
 
 async function getQuote() {
@@ -16,9 +15,9 @@ async function getQuote() {
     const quote = await getUrl();
     quoteDisp.innerText = quote;
   } catch (error) {
-    quoteDisp.innerText = (error);
+    quoteDisp.innerText = error;
     console.error(error);
-  } 
+  }
 }
 getQuote();
 const typingDiv = document.getElementById("elemdisp");
@@ -66,13 +65,6 @@ startBtn.addEventListener("click", () => {
 });
 
 button.addEventListener("click", () => {
-  // const text = typingDiv.value;
-  // const size = text.length;
-
-  // const wpm = size / 5;
-
-  // result.textContent = wpm;
-  // alert("Your WPM is:" + wpm);
   const typedText = typingDiv.value;
   const quoteText = quoteDisp.innerText;
   const typedWords = typedText.trim().split(/\s+/);
@@ -83,21 +75,10 @@ button.addEventListener("click", () => {
   }
   const accuracy =
     typedWords.length > 0 ? (correctWords / typedWords.length) * 100 : 0;
-  const timeTaken = (Date.now() - startTime) / 1000 / 60; // minutes
+  const timeTaken = (Date.now() - startTime) / 1000 / 60;
   const wpm = timeTaken > 0 ? correctWords / timeTaken : 0;
   result.textContent = `Correct words: ${correctWords}/${quoteWords.length}, Accuracy: ${accuracy.toFixed(2)}%, WPM: ${wpm.toFixed(2)}`;
-  // alert(`Your WPM: ${wpm.toFixed(2)}, Accuracy: ${accuracy.toFixed(2)}%`);
 });
-
-// function calculateWPM() {
-//   const text = typingDiv.textContent;
-//   const chars = text.length;
-
-//   const minutes = 30 / 60;
-//   const wpm = (chars / 5) / minutes;
-
-//   result.textContent = "WPM: " + Math.round(wpm);
-// }
 
 const keys = document.querySelectorAll(".key");
 
@@ -120,8 +101,3 @@ document.addEventListener("keyup", (e) => {
 startBtn.addEventListener("click", () => {
   calcBtn.disabled = true;
 });
-
-
-// async function hi(){
-//   let hello = await fetch("api-url.com"); 
-// }
