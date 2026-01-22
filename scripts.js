@@ -4,15 +4,21 @@ const RANDOM_QUOTE_URL = "https://random-word-api.herokuapp.com/word?number=50";
 const quoteDisp = document.getElementById("static-content");
 
 function getUrl() {
-  return fetch(RANDOM_QUOTE_URL)
-    .then((response) => response.json())
-    .then((data) => data.join(" "));
+    return fetch(RANDOM_QUOTE_URL)
+      .then((response) => response.json())
+      .then((data) => data.join(" "));
+
 }
 
 async function getQuote() {
   quoteDisp.innerText = "Loading...";
-  const quote = await getUrl();
-  quoteDisp.innerText = quote;
+  try {
+    const quote = await getUrl();
+    quoteDisp.innerText = quote;
+  } catch (error) {
+    quoteDisp.innerText = (error);
+    console.error(error);
+  } 
 }
 getQuote();
 const typingDiv = document.getElementById("elemdisp");
@@ -114,3 +120,8 @@ document.addEventListener("keyup", (e) => {
 startBtn.addEventListener("click", () => {
   calcBtn.disabled = true;
 });
+
+
+// async function hi(){
+//   let hello = await fetch("api-url.com"); 
+// }
