@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/output.css">
   </head>
-  <body
+  <body  
     class="bg-neutral-100 min-h-screen flex flex-col items-center justify-between p-8"
   >
     <div
@@ -118,120 +118,6 @@
         <button class="key ctrl">ctrl</button>
       </div>
     </div>
-
-    <style>
-      .disabled-btn {
-        cursor: not-allowed;
-        opacity: 0.6;
-      }
-      .keyboard {
-        background: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-        display: inline-block;
-      }
-
-      .row {
-        display: flex;
-        gap: 0.25rem;
-        margin-bottom: 0.25rem;
-      }
-
-      .row:last-child {
-        margin-bottom: 0;
-      }
-
-      .key {
-        background: #fff;
-        border: 1px solid #d4d4d4;
-        border-bottom: 3px solid #a3a3a3;
-        border-radius: 0.25rem;
-        padding: 0.75rem;
-        min-width: 3rem;
-        height: 3rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: #262626;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-transform: lowercase;
-        line-height: 1.2;
-      }
-
-      .key:active {
-        transform: translateY(2px);
-        border-bottom-width: 1px;
-      }
-
-      .key.active {
-        background-color: blue;
-        color: white;
-      }
-
-      .backspace {
-        width: 6rem;
-      }
-      .tab {
-        width: 4.5rem;
-      }
-      .caps {
-        width: 5.5rem;
-      }
-      .enter {
-        width: 5.5rem;
-      }
-      .shift-left {
-        width: 7rem;
-      }
-      .shift-right {
-        width: 7rem;
-      }
-      .ctrl {
-        width: 4rem;
-      }
-      .space {
-        flex: 1;
-      }
-
-      @media (max-width: 768px) {
-        .keyboard {
-          padding: 0.5rem;
-          max-width: 100%;
-        }
-
-        .key {
-          min-width: 2rem;
-          height: 2.5rem;
-          padding: 0.5rem;
-          font-size: 0.75rem;
-        }
-
-        .backspace {
-          width: 4rem;
-        }
-        .tab {
-          width: 3rem;
-        }
-        .caps {
-          width: 3.5rem;
-        }
-        .enter {
-          width: 3.5rem;
-        }
-        .shift-left {
-          width: 4.5rem;
-        }
-        .shift-right {
-          width: 4.5rem;
-        }
-        .ctrl {
-          width: 2.5rem;
-        }
-      }
-    </style>
   </body>
   <script src="./scripts.js" defer></script>
 </html>
