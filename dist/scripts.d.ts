@@ -1,2 +1,22 @@
-export {};
+declare const RANDOM_QUOTE_URL: string;
+declare const quoteDisp: HTMLDivElement;
+declare function getUrl(): Promise<string>;
+declare function getQuote(): Promise<void>;
+declare const typingDiv: HTMLTextAreaElement;
+declare const button: HTMLButtonElement;
+declare const timerdisplay: HTMLDivElement;
+declare const startBtn: HTMLButtonElement;
+declare const resultModal: HTMLDivElement;
+declare const closeModalBtn: HTMLButtonElement;
+declare const closeModal: HTMLButtonElement;
+declare let timeLeft: number;
+declare let timerId: number | null;
+declare let startTime: number | null;
+declare let quoteWords: string[];
+declare let currentWordIndex: number;
+declare let totalCorrectWords: number;
+declare let totalWordsAttemptedCount: number;
+declare let wordCounted: boolean;
+declare function loadNewWords(): Promise<void>;
+declare const keys: NodeListOf<Element>;
 //# sourceMappingURL=scripts.d.ts.map
