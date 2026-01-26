@@ -30,6 +30,12 @@
   animation: slideIn 0.3s ease-out;
 }
 
+.playwrite-vn-special-font {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .disabled-btn {
   cursor: not-allowed;
   opacity: 0.6;

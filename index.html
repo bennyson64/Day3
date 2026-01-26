@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WPM Typing Test</title>
     <link rel="stylesheet" href="./src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Audiowide&family=Bangers&family=Boldonse&family=Bungee&family=Playwrite+VN:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body
     class="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 min-h-screen flex flex-col items-center justify-between p-4 md:p-8"
   >
+  <div class="bg-[url('./images/bg.jpg')] bg-cover bg-center bg-no-repeat">
     <!-- Header -->
     <div class="w-full max-w-4xl mx-auto mb-6">
-      <h1 class="text-4xl md:text-5xl font-bold text-white text-center mb-2">
+      <h1
+        class="playwrite-vn-special-font text-4xl md:text-5xl font-bold text-white text-center mb-2"
+      >
         Typing Speed Test
       </h1>
-      <p class="text-center text-purple-200 text-sm md:text-base">
+      <p
+        class="playwrite-vn-special-font text-center text-purple-200 text-sm md:text-base"
+      >
         Test your typing speed and accuracy
       </p>
     </div>
@@ -22,13 +33,13 @@
     <!-- Quote Display -->
     <div
       id="static-content"
-      class="text-center mb-6 bg-gradient-to-r from-purple-600 to-purple-500 p-6 md:p-8 border-2 border-purple-400 rounded-xl shadow-lg max-w-3xl mx-auto text-white text-lg md:text-xl leading-relaxed font-medium"
+      class="playwrite-vn-special-font text-center mb-6 bg-gradient-to-r from-purple-600 to-purple-500 p-6 md:p-8 border-2 border-purple-400 rounded-xl shadow-lg max-w-3xl mx-auto text-white text-lg md:text-xl leading-relaxed font-medium"
     ></div>
 
     <!-- Input Field -->
     <input
       type="text"
-      class="block w-full max-w-2xl p-4 md:p-5 border-2 border-purple-400 rounded-lg shadow-lg focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-400/30 bg-white/95 mb-6 text-gray-800 placeholder-gray-500 transition"
+      class="playwrite-vn-special-font block w-full max-w-2xl pr-4 md:p-5 border-2 border-purple-400 rounded-lg shadow-lg focus:outline-none focus:border-pink-500 focus:ring-4 focus:ring-pink-400/30 bg-white/95 mb-6 text-gray-800 placeholder-gray-500 transition lg:ml-16"
       id="elemdisp"
       placeholder="Click 'Start' and type here..."
     />
@@ -38,17 +49,20 @@
       class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mb-8 w-full flex-wrap"
     >
       <div class="flex flex-col items-center">
-        <p
-          class="text-purple-200 text-xs md:text-sm font-semibold mb-2 uppercase tracking-widest"
-        >
-          Time Left
-        </p>
-        <p
-          id="timer"
-          class="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-5xl md:text-6xl font-bold p-6 rounded-full min-w-28 text-center shadow-lg"
-        >
-          30
-        </p>
+        <div class="md:fixed md:top-6 md:right-6 md:text-right">
+          <p
+            class="text-purple-200 text-xs md:text-sm font-semibold mb-2 uppercase tracking-widest"
+          >
+            Time Left
+          </p>
+
+          <p
+            id="timer"
+            class="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-5xl md:text-6xl font-bold p-6 rounded-full min-w-28 text-center shadow-lg"
+          >
+            30
+          </p>
+        </div>
       </div>
 
       <div class="flex gap-3">
@@ -205,6 +219,7 @@
         <button class="key">alt</button>
         <button class="key ctrl">ctrl</button>
       </div>
+    </div>
     </div>
   </body>
   <script src="./dist/scripts.js"></script>
