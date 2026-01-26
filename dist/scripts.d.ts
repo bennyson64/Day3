@@ -14,6 +14,8 @@ declare let timerId: number | null;
 declare let startTime: number | null;
 declare let quoteWords: string[];
 declare let currentWordIndex: number;
+declare let currentWordIndexForAccuracy: number;
+declare let denominatorForAccuracy: number;
 declare let totalCorrectWords: number;
 declare let totalWordsAttemptedCount: number;
 declare let wordCounted: boolean;

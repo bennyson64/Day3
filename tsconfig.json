@@ -9,7 +9,7 @@
     // See also https://aka.ms/tsconfig/module
     "module": "ES2015",
     "target": "ES2015",
-    "lib": ["ES2015", "DOM"],
+    "lib": ["DOM", "ES2015"],
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],

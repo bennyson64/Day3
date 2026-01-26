@@ -43,6 +43,8 @@ let timerId = null;
 let startTime = null;
 let quoteWords = [];
 let currentWordIndex = 0;
+let currentWordIndexForAccuracy = 0;
+let denominatorForAccuracy = 0;
 let totalCorrectWords = 0;
 let totalWordsAttemptedCount = 0;
 let wordCounted = false;
@@ -97,12 +99,12 @@ button.addEventListener("click", () => {
     const timeTaken = (Date.now() - (startTime || 0)) / 1000 / 60;
     const wpm = timeTaken > 0 ? totalCorrectWords / timeTaken : 0;
     const totalWordsAttempted = currentWordIndex > 0 ? currentWordIndex : 1;
-    const accuracy = (totalCorrectWords / totalWordsAttempted) * 100;
+    const accuracy = (((currentWordIndexForAccuracy / totalWordsAttemptedCount) * 100));
     // Update modal with results
     document.getElementById("modalWpm").textContent =
         wpm.toFixed(2);
     document.getElementById("modalCorrectWords").textContent =
-        totalCorrectWords.toString();
+        totalCorrectWords.toString() + "/" + totalWordsAttemptedCount;
     document.getElementById("modalAccuracy").textContent =
         accuracy.toFixed(2) + "%";
     // Show modal
@@ -136,6 +138,7 @@ typingDiv.addEventListener("input", () => {
             typingDiv.style.color = "#166534";
             totalCorrectWords++;
             wordCounted = true;
+            currentWordIndexForAccuracy += 1;
         }
         else if (!isCorrect) {
             // Wrong word - show red even if some letters match

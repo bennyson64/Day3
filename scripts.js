@@ -1,183 +1,76 @@
 // "https://api.allorigins.win/raw?url=https://zenquotes.io/api/random"
-var __awaiter =
-  (this && this.__awaiter) ||
-  function (thisArg, _arguments, P, generator) {
-    function adopt(value) {
-      return value instanceof P
-        ? value
-        : new P(function (resolve) {
-            resolve(value);
-          });
-    }
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
-      function fulfilled(value) {
-        try {
-          step(generator.next(value));
-        } catch (e) {
-          reject(e);
-        }
-      }
-      function rejected(value) {
-        try {
-          step(generator["throw"](value));
-        } catch (e) {
-          reject(e);
-        }
-      }
-      function step(result) {
-        result.done
-          ? resolve(result.value)
-          : adopt(result.value).then(fulfilled, rejected);
-      }
-      step((generator = generator.apply(thisArg, _arguments || [])).next());
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
-  };
-var __generator =
-  (this && this.__generator) ||
-  function (thisArg, body) {
-    var _ = {
-        label: 0,
-        sent: function () {
-          if (t[0] & 1) throw t[1];
-          return t[1];
-        },
-        trys: [],
-        ops: [],
-      },
-      f,
-      y,
-      t,
-      g = Object.create(
-        (typeof Iterator === "function" ? Iterator : Object).prototype,
-      );
-    return (
-      (g.next = verb(0)),
-      (g["throw"] = verb(1)),
-      (g["return"] = verb(2)),
-      typeof Symbol === "function" &&
-        (g[Symbol.iterator] = function () {
-          return this;
-        }),
-      g
-    );
-    function verb(n) {
-      return function (v) {
-        return step([n, v]);
-      };
-    }
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g = Object.create((typeof Iterator === "function" ? Iterator : Object).prototype);
+    return g.next = verb(0), g["throw"] = verb(1), g["return"] = verb(2), typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
-      if (f) throw new TypeError("Generator is already executing.");
-      while ((g && ((g = 0), op[0] && (_ = 0)), _))
-        try {
-          if (
-            ((f = 1),
-            y &&
-              (t =
-                op[0] & 2
-                  ? y["return"]
-                  : op[0]
-                    ? y["throw"] || ((t = y["return"]) && t.call(y), 0)
-                    : y.next) &&
-              !(t = t.call(y, op[1])).done)
-          )
-            return t;
-          if (((y = 0), t)) op = [op[0] & 2, t.value];
-          switch (op[0]) {
-            case 0:
-            case 1:
-              t = op;
-              break;
-            case 4:
-              _.label++;
-              return { value: op[1], done: false };
-            case 5:
-              _.label++;
-              y = op[1];
-              op = [0];
-              continue;
-            case 7:
-              op = _.ops.pop();
-              _.trys.pop();
-              continue;
-            default:
-              if (
-                !((t = _.trys), (t = t.length > 0 && t[t.length - 1])) &&
-                (op[0] === 6 || op[0] === 2)
-              ) {
-                _ = 0;
-                continue;
-              }
-              if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
-                _.label = op[1];
-                break;
-              }
-              if (op[0] === 6 && _.label < t[1]) {
-                _.label = t[1];
-                t = op;
-                break;
-              }
-              if (t && _.label < t[2]) {
-                _.label = t[2];
-                _.ops.push(op);
-                break;
-              }
-              if (t[2]) _.ops.pop();
-              _.trys.pop();
-              continue;
-          }
-          op = body.call(thisArg, _);
-        } catch (e) {
-          op = [6, e];
-          y = 0;
-        } finally {
-          f = t = 0;
-        }
-      if (op[0] & 5) throw op[1];
-      return { value: op[0] ? op[1] : void 0, done: true };
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
-  };
-var RANDOM_QUOTE_URL = "https://random-word-api.herokuapp.com/word?number=50";
+};
+var RANDOM_QUOTE_URL = "https://random-word-api.herokuapp.com/word?number=1";
 var quoteDisp = document.getElementById("static-content");
 function getUrl() {
-  return fetch(RANDOM_QUOTE_URL)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      return data.join(" ");
-    });
+    return fetch(RANDOM_QUOTE_URL)
+        .then(function (response) { return response.json(); })
+        .then(function (data) { return data.join(" "); });
 }
 function getQuote() {
-  return __awaiter(this, void 0, void 0, function () {
-    var quote, error_1;
-    return __generator(this, function (_a) {
-      switch (_a.label) {
-        case 0:
-          quoteDisp.innerText = "Loading...";
-          _a.label = 1;
-        case 1:
-          _a.trys.push([1, 3, , 4]);
-          return [4 /*yield*/, getUrl()];
-        case 2:
-          quote = _a.sent();
-          quoteDisp.innerText = quote;
-          return [3 /*break*/, 4];
-        case 3:
-          error_1 = _a.sent();
-          quoteDisp.innerText = error_1;
-          console.error(error_1);
-          return [3 /*break*/, 4];
-        case 4:
-          return [2 /*return*/];
-      }
+    return __awaiter(this, void 0, void 0, function () {
+        var quote, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    quoteDisp.innerText = "Loading...";
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, getUrl()];
+                case 2:
+                    quote = _a.sent();
+                    quoteDisp.innerText = quote;
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_1 = _a.sent();
+                    quoteDisp.innerText = String(error_1);
+                    console.error(error_1);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
+            }
+        });
     });
-  });
 }
 getQuote();
 var typingDiv = document.getElementById("elemdisp");
 typingDiv.disabled = true;
 var button = document.getElementById("calcBtn");
-var result = document.getElementById("result");
 var timerdisplay = document.getElementById("timer");
 var startBtn = document.getElementById("startBtn");
 var resultModal = document.getElementById("resultModal");
@@ -186,103 +79,172 @@ var closeModal = document.getElementById("closeModal");
 var timeLeft = 30;
 var timerId = null;
 var startTime = null;
+var quoteWords = [];
+var currentWordIndex = 0;
+var totalCorrectWords = 0;
+var totalWordsAttemptedCount = 0;
+var wordCounted = false;
+// Load new words from API
+function loadNewWords() {
+    return __awaiter(this, void 0, void 0, function () {
+        var newQuote, error_2;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, getUrl()];
+                case 1:
+                    newQuote = _a.sent();
+                    quoteWords = newQuote.trim().split(/\s+/);
+                    currentWordIndex = 0;
+                    quoteDisp.innerText = quoteWords.join(" ");
+                    return [3 /*break*/, 3];
+                case 2:
+                    error_2 = _a.sent();
+                    console.error("Failed to load new words:", error_2);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
+            }
+        });
+    });
+}
+// Initialize with first set of words
+loadNewWords();
 startBtn.addEventListener("click", function () {
-  if (timerId !== null) return;
-  timeLeft = 30;
-  timerdisplay.textContent = timeLeft.toString();
-  startTime = Date.now();
-  console.log(startTime);
-  button.disabled = true;
-  startBtn.disabled = true;
-  typingDiv.disabled = false;
-  button.classList.add("disabled-btn");
-  document.addEventListener("click", function (e) {
-    if (button.disabled === true) {
-      startBtn.classList.add("startBtn");
-    }
-  });
-  timerId = setInterval(function () {
-    if (timeLeft === 0) {
-      clearInterval(timerId);
-      timerId = null;
-      button.disabled = false;
-      startBtn.disabled = false;
-      typingDiv.disabled = true;
-      button.classList.remove("disabled-btn");
-      alert("stop!");
-      return;
-    }
-    timeLeft--;
+    if (timerId !== null)
+        return;
+    timeLeft = 30;
     timerdisplay.textContent = timeLeft.toString();
-  }, 1000);
+    startTime = Date.now();
+    console.log(startTime);
+    button.disabled = true;
+    startBtn.disabled = true;
+    typingDiv.disabled = false;
+    button.classList.add("disabled-btn");
+    document.addEventListener("click", function (e) {
+        if (button.disabled === true) {
+            startBtn.classList.add("startBtn");
+        }
+    });
+    timerId = setInterval(function () {
+        if (timeLeft === 0) {
+            clearInterval(timerId);
+            timerId = null;
+            button.disabled = false;
+            startBtn.disabled = false;
+            typingDiv.disabled = true;
+            button.classList.remove("disabled-btn");
+            alert("stop!");
+            return;
+        }
+        timeLeft--;
+        timerdisplay.textContent = timeLeft.toString();
+    }, 1000);
 });
 button.addEventListener("click", function () {
-  var typedText = typingDiv.value;
-  var quoteText = quoteDisp.innerText;
-  var typedWords = typedText.trim().split(/\s+/);
-  var quoteWords = quoteText.trim().split(/\s+/);
-  var correctWords = 0;
-  for (var i = 0; i < Math.min(typedWords.length, quoteWords.length); i++) {
-    if (typedWords[i] === quoteWords[i]) {
-      correctWords++;
-    }
-  }
-  var accuracy =
-    typedWords.length > 0 ? (correctWords / typedWords.length) * 100 : 0;
-  var timeTaken = (Date.now() - (startTime || 0)) / 1000 / 60;
-  var wpm = timeTaken > 0 ? correctWords / timeTaken : 0;
-
-  // Update modal with results
-  document.getElementById("modalWpm").textContent = wpm.toFixed(2);
-  document.getElementById("modalCorrectWords").textContent =
-    correctWords + "/" + quoteWords.length;
-  document.getElementById("modalAccuracy").textContent =
-    accuracy.toFixed(2) + "%";
-
-  // Show modal
-  resultModal.classList.remove("hidden");
+    var timeTaken = (Date.now() - (startTime || 0)) / 1000 / 60;
+    var wpm = timeTaken > 0 ? totalCorrectWords / timeTaken : 0;
+    var totalWordsAttempted = currentWordIndex > 0 ? currentWordIndex : 1;
+    var accuracy = (totalCorrectWords / totalWordsAttempted) * 100;
+    // Update modal with results
+    document.getElementById("modalWpm").textContent =
+        wpm.toFixed(2);
+    document.getElementById("modalCorrectWords").textContent =
+        totalCorrectWords.toString();
+    document.getElementById("modalAccuracy").textContent =
+        accuracy.toFixed(2) + "%";
+    // Show modal
+    resultModal.classList.remove("hidden");
 });
 var keys = document.querySelectorAll(".key");
-document.addEventListener("keydown", function (e) {
-  keys.forEach(function (b) {
-    var _a;
-    if (
-      ((_a = b.textContent) === null || _a === void 0
-        ? void 0
-        : _a.toLowerCase()) === e.key.toLowerCase()
-    ) {
-      b.classList.add("active");
+// Real-time word checking - character by character
+typingDiv.addEventListener("input", function () {
+    var currentInput = typingDiv.value;
+    var expectedWord = quoteWords[currentWordIndex] || "";
+    if (currentInput === "") {
+        typingDiv.style.backgroundColor = "";
+        typingDiv.style.color = "";
+        wordCounted = false;
+        return;
     }
-  });
+    // Compare character by character
+    var isCorrect = true;
+    for (var i = 0; i < currentInput.length; i++) {
+        if (currentInput[i] !== expectedWord[i]) {
+            isCorrect = false;
+            break;
+        }
+    }
+    // Check if word is complete
+    if (currentInput.length === expectedWord.length) {
+        totalWordsAttemptedCount++;
+        if (isCorrect && !wordCounted) {
+            // Correct word - all letters match (only count once)
+            typingDiv.style.backgroundColor = "#dcfce7";
+            typingDiv.style.color = "#166534";
+            totalCorrectWords++;
+            wordCounted = true;
+        }
+        else if (!isCorrect) {
+            // Wrong word - show red even if some letters match
+            typingDiv.style.backgroundColor = "#fee2e2";
+            typingDiv.style.color = "#991b1b";
+        }
+        // Move to next word after a short delay
+        setTimeout(function () {
+            currentWordIndex++;
+            typingDiv.value = "";
+            typingDiv.style.backgroundColor = "";
+            typingDiv.style.color = "";
+            wordCounted = false;
+            // Load new words if we've typed all current words
+            if (currentWordIndex >= quoteWords.length) {
+                loadNewWords();
+                currentWordIndex = 0;
+            }
+        }, 500);
+    }
+    else if (currentInput.length > 0) {
+        // Still typing - show green if correct so far, red if any letter is wrong
+        if (isCorrect) {
+            typingDiv.style.backgroundColor = "#dcfce7";
+            typingDiv.style.color = "#166534";
+        }
+        else {
+            typingDiv.style.backgroundColor = "#fee2e2";
+            typingDiv.style.color = "#991b1b";
+        }
+    }
+});
+document.addEventListener("keydown", function (e) {
+    keys.forEach(function (b) {
+        var _a;
+        if (((_a = b.textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === e.key.toLowerCase()) {
+            b.classList.add("active");
+        }
+    });
 });
 document.addEventListener("keyup", function (e) {
-  keys.forEach(function (b) {
-    var _a;
-    if (
-      ((_a = b.textContent) === null || _a === void 0
-        ? void 0
-        : _a.toLowerCase()) === e.key.toLowerCase()
-    ) {
-      b.classList.remove("active");
-    }
-  });
+    keys.forEach(function (b) {
+        var _a;
+        if (((_a = b.textContent) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === e.key.toLowerCase()) {
+            b.classList.remove("active");
+        }
+    });
 });
 startBtn.addEventListener("click", function () {
-  button.disabled = true;
+    button.disabled = true;
 });
-
 // Modal close handlers
 closeModalBtn.addEventListener("click", function () {
-  resultModal.classList.add("hidden");
+    resultModal.classList.add("hidden");
 });
-
 closeModal.addEventListener("click", function () {
-  resultModal.classList.add("hidden");
+    resultModal.classList.add("hidden");
 });
-
 // Close modal when clicking outside of it
 resultModal.addEventListener("click", function (e) {
-  if (e.target === resultModal) {
-    resultModal.classList.add("hidden");
-  }
+    if (e.target === resultModal) {
+        resultModal.classList.add("hidden");
+    }
 });

@@ -52,6 +52,8 @@ let timerId: number | null = null;
 let startTime: number | null = null;
 let quoteWords: string[] = [];
 let currentWordIndex: number = 0;
+let currentWordIndexForAccuracy: number =0;
+let denominatorForAccuracy = 0;
 let totalCorrectWords: number = 0;
 let totalWordsAttemptedCount: number = 0;
 let wordCounted: boolean = false;
@@ -108,15 +110,14 @@ startBtn.addEventListener("click", (): void => {
 button.addEventListener("click", (): void => {
   const timeTaken: number = (Date.now() - (startTime || 0)) / 1000 / 60;
   const wpm: number = timeTaken > 0 ? totalCorrectWords / timeTaken : 0;
-  const totalWordsAttempted: number =
-    currentWordIndex > 0 ? currentWordIndex : 1;
-  const accuracy: number = (totalCorrectWords / totalWordsAttempted) * 100;
+  const totalWordsAttempted: number = currentWordIndex > 0 ? currentWordIndex : 1;
+  const accuracy: number = (((currentWordIndexForAccuracy / totalWordsAttemptedCount) * 100));
 
   // Update modal with results
   (document.getElementById("modalWpm") as HTMLDivElement).textContent =
     wpm.toFixed(2);
   (document.getElementById("modalCorrectWords") as HTMLDivElement).textContent =
-    totalCorrectWords.toString();
+    totalCorrectWords.toString() + "/" + totalWordsAttemptedCount;
   (document.getElementById("modalAccuracy") as HTMLDivElement).textContent =
     accuracy.toFixed(2) + "%";
 
@@ -156,6 +157,7 @@ typingDiv.addEventListener("input", (): void => {
       typingDiv.style.color = "#166534";
       totalCorrectWords++;
       wordCounted = true;
+      currentWordIndexForAccuracy += 1;
     } else if (!isCorrect) {
       // Wrong word - show red even if some letters match
       typingDiv.style.backgroundColor = "#fee2e2";
